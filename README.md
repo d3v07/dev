@@ -1,103 +1,63 @@
-## Dev Trivedi — Full‑Stack Developer Portfolio
+# playground-macos
 
-Building the home of my work on the web. This repo will host the source for my personal site at `devtrivedi.com`.
+My portfolio website simulating macOS's GUI: https://portfolio.zxh.me
 
-- **Domain**: `devtrivedi.com` (purchased)
-- **Role/Positioning**: Full‑Stack Developer
-- **Status**: Planning the initial MVP and scaffolding
+Powered by [React](https://reactjs.org/) + [Zustand](https://zustand-demo.pmnd.rs/) + [UnoCSS](https://uno.antfu.me/) + [TypeScript](https://www.typescriptlang.org/) + [Vite](https://vitejs.dev/).
 
-### Goals
-- **Showcase projects** with clear problem/solution, stack, and impact
-- **Demonstrate full‑stack breadth** (frontend, backend, infra, CI/CD)
-- **Provide clear contact paths** (email, social, calendar)
-- **Perform well** on Core Web Vitals and SEO
+![light mode](./public/screenshots/light.png)
+![dark mode](./public/screenshots/dark.png)
 
-### Proposed Stack (pragmatic, fast to ship)
-- **Framework**: Next.js 14 (App Router) + React 18 + TypeScript
-- **Styling/UI**: Tailwind CSS + shadcn/ui
-- **Content**: MDX (via Contentlayer) for projects/blog/case studies
-- **Forms/Email**: Resend (or Formspree for zero‑backend MVP)
-- **Analytics**: Vercel Analytics and/or Plausible
-- **Deployment**: Vercel (preview URLs, easy DNS setup)
-- Optional (later): PostgreSQL + Prisma for dynamic content, PostHog for product analytics
 
-### MVP Features
-- [ ] Home with strong value proposition and CTA
-- [ ] Projects page (filterable) + individual case study pages (MDX)
-- [ ] About page (bio, skills, experience timeline, logos)
-- [ ] Contact page with working form + email delivery
-- [ ] Basic blog (optional in MVP; start with 1–2 posts)
-- [ ] SEO essentials (meta, Open Graph, JSON‑LD, sitemap, robots)
-- [ ] Dark mode and responsive layout
+&nbsp;
 
-### Roadmap
-#### v0.1 — Foundation
-- [ ] Initialize Next.js + TypeScript
-- [ ] Tailwind + shadcn/ui setup
-- [ ] Base layout, navigation, footer, theme
-- [ ] Contentlayer/MDX pipeline
-- [ ] Project content schema and sample entries
+## Usage
 
-#### v0.2 — MVP Ready
-- [ ] Home, Projects, Project Detail, About, Contact pages
-- [ ] Form wiring (Resend/Formspree) + success/failure states
-- [ ] SEO: metadata, sitemap, robots, canonical URLs, OG images
-- [ ] Deploy to Vercel + connect `devtrivedi.com`
+Clone the repo and install dependencies:
 
-#### v0.3 — Polish
-- [ ] Performance pass (Lighthouse > 95)
-- [ ] Analytics dashboards
-- [ ] Add 1–2 blog posts or case studies
-- [ ] Minor animations and micro‑interactions
-
-### Content Plan (initial placeholders)
-- **Hero statement**: “Full‑Stack Developer helping teams ship reliable, user‑centric products.”
-- **Skills snapshot**: TypeScript, React/Next.js, Node.js, PostgreSQL, Prisma, Docker, CI/CD, Cloud (Vercel/AWS), Testing (Vitest/Jest/Playwright)
-- **Projects (draft list)**:
-  - Project A — brief value/impact line
-  - Project B — brief value/impact line
-  - Project C — brief value/impact line
-- **Case studies structure**:
-  - Context → Problem → Approach → Architecture → Results → What I’d do differently
-
-### SEO & Social
-- Add `site.json`/metadata with title, description, and social handles
-- Open Graph image generation (Next.js OG/Image)
-- JSON‑LD for Person, WebSite, and Article (blog posts)
-- Clean, readable URLs; canonical tags
-
-### Deployment
-- Host on Vercel; connect `devtrivedi.com` DNS
-- Production branch: `main`; deploy previews on PRs
-
-### Local Development (will be updated after scaffolding)
 ```bash
-# prerequisites
-node --version   # >= 18
-pnpm --version   # or yarn/npm
-
-# after scaffolding is added
 pnpm install
+```
+
+Start dev server (with hot reloading):
+
+```bash
 pnpm dev
 ```
 
-### Conventions
-- TypeScript everywhere; strict mode
-- Accessible components (focus states, landmarks, color contrast)
-- Descriptive commit messages; conventional commits preferred
+Build for production with minification to the `dist` folder:
 
-### License
-Copyright © Dev Trivedi. All rights reserved.
-
-### Contact
-- Email: [add your email]
-- LinkedIn: [add link]
-- GitHub: [add link]
-- Calendly: [optional]
-
----
-
-If you’re reading this early, you’re catching the build in public. Feedback is welcome.
+```bash
+pnpm build
+```
 
 
+&nbsp;
 
+## Changelog
+
+- **Update 2023.06.26**: Improve [FaceTime](https://support.apple.com/en-us/HT208176).
+
+- **Update 2023.06.25**: Add [Typora](https://typora.io/), built on top of [Milkdown](https://milkdown.dev/).
+
+- **Update 2021.12.05**: Simulated the device's actual battery state using [Battery API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API), displaying 100% charge on [unsupported browsers](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API#browser_compatibility).
+
+- **Update 2021.12.05**: Refactored for cleaner code by utilizing functional components and hooks. Refer to [this branch](https://github.com/Renovamen/playground-macos/tree/class-component) for the previous version implemented with class components.
+
+
+&nbsp;
+
+## Credits
+
+- macOS
+  - [Monterey](https://www.apple.com/macos/monterey/)
+  - [Catalina](https://www.apple.com/bw/macos/catalina/)
+- [macOS Icon Gallery](https://www.macosicongallery.com/)
+- [sindresorhus/file-icon-cli](https://github.com/sindresorhus/file-icon-cli)
+- [vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)
+
+
+&nbsp;
+
+## License
+
+[MIT](MIT)
