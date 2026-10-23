@@ -41,3 +41,5 @@ next-env.d.ts
 nul
 HOME_PAGE_OVERVIEW.md
 QUICK_START.md
+# hallmark design-skill working files (screenshots, lint records)
+.hallmark/
