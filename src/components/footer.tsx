@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react'
+import { contact } from '@/lib/resume'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { href: 'https://github.com/d3v07', icon: Github, label: 'GitHub' },
-    { href: 'https://linkedin.com/in/trivedi-dev', icon: Linkedin, label: 'LinkedIn' },
-    { href: 'mailto:trivedidev16@gmail.com', icon: Mail, label: 'Email' },
+    { href: contact.github, label: 'GitHub' },
+    { href: contact.linkedin, label: 'LinkedIn' },
+    { href: `mailto:${contact.email}`, label: 'Email' },
   ]
 
   const footerLinks = [
@@ -18,62 +18,35 @@ export function Footer() {
   ]
 
   return (
-    <footer className="border-t border-border/40 bg-background">
-      <div className="container py-12">
-        <div className="grid gap-8 md:grid-cols-3">
-          {/* Brand Section */}
-          <div>
-            <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent mb-3">
-              Dev Trivedi
-            </h3>
-            <p className="text-sm text-muted-foreground max-w-xs">
-              Software Development Engineer | MS in Computer Science @ NJIT | Building scalable solutions with MERN, AWS, and C++
-            </p>
-          </div>
+    <footer className="footer">
+      <div className="container">
+        <p className="footer__mast">Dev Trivedi</p>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold mb-3">Quick Links</h4>
-            <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid-12 footer__cols">
+          <p className="footer__about">
+            Software development engineer and MS student in computer science at NJIT, building with MERN, AWS and C++.
+          </p>
 
-          {/* Social Links */}
-          <div>
-            <h4 className="text-sm font-semibold mb-3">Connect</h4>
-            <div className="flex gap-4">
-              {socialLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label={link.label}
-                  >
-                    <Icon size={20} />
-                  </a>
-                )
-              })}
-            </div>
-          </div>
+          <ul className="footer__list" aria-label="Pages">
+            {footerLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="footer__list" aria-label="Elsewhere">
+            {socialLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Dev Trivedi. All rights reserved.</p>
-        </div>
+        <p className="footer__legal">&copy; {currentYear} Dev Trivedi</p>
       </div>
     </footer>
   )
